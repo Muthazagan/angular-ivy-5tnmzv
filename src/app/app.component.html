@@ -1,0 +1,17 @@
+<form #testForm="ngForm">
+	<div class="form-group">
+
+		<label for="name">Name</label>
+		<input id="name" name="name" class="form-control" required
+     [(ngModel)]="name" #name="ngModel"  >
+		<div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+			<div *ngIf="name.errors.required">
+				Name is required.
+			</div>
+		</div>
+		<!-- <input id="name" name="name" class="form-control"
+                required minlength="4" appForbiddenName="bob"
+                [(ngModel)]="hero.name" #name="ngModel" > -->
+
+	</div>
+</form>
